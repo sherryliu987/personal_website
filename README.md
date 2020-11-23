@@ -1,6 +1,6 @@
-This is my personal website / place to dump projects. Thanks for checking it out!
+This is the code for my personal website / place to dump projects. Website at sherryliu.herokuapp.com. Thanks for checking it out!
 
-This project uses a flask framework,
+This project uses a flask framework. 
 
 ###TASK LIST
 - [ ] Make first blog post
