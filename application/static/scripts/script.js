@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight - 45;
 
 let particlesArray;
 
@@ -15,6 +15,9 @@ window.addEventListener('mousemove',
     function(event){
         mouse.x = event.x;
         mouse.y = event.y;
+        for(let i = 0 ; i<particlesArray.length ; i++){
+            particlesArray[i].moveAwayMouse();
+        }
     }
     )
 
@@ -36,13 +39,7 @@ class Particle{
         ctx.fill();
     }
 
-    update(){
-        if(this.x > canvas.width || this.x < 0){
-            this.d_X = -this.d_X;
-        }
-        if(this.y > canvas.height || this.y < 0){
-            this.d_Y = -this.d_Y;
-        }
+    moveAwayMouse(){
         let change_x = mouse.x - this.x;
         let change_y = mouse.y - this.y;
         let distance = Math.sqrt(change_x * change_x + change_y * change_y);
@@ -61,6 +58,15 @@ class Particle{
             if(mouse.y > this.y && this.y > this.size * mouseR) {
                 this.y -= mouseMove;
             }
+        }
+    }
+
+    update(){
+        if(this.x > canvas.width || this.x < 0){
+            this.d_X = -this.d_X;
+        }
+        if(this.y > canvas.height || this.y < 0){
+            this.d_Y = -this.d_Y;
         }
         this.x += this.d_X;
         this.y += this.d_Y;
@@ -83,7 +89,7 @@ function init(){
 }
 
 function animate(){
-    ctx.globalAlpha = 0.5;
+    ctx.globalAlpha = 0.45;
     requestAnimationFrame(animate);
     ctx.clearRect(0,0,canvas.width, canvas.height);
 
@@ -116,9 +122,11 @@ function connect(){
 function addText(){
     ctx.font = 'bold 48px serif';
     ctx.globalAlpha = 1;
-    ctx.fillText("Sherry Liu", canvas.width/2 - 100, canvas.height/2);
+    ctx.fillStyle = "#152238";
+    ctx.fillText("Hello, I'm Sherry Liu.", canvas.width/2 - 220, canvas.height/2);
+    ctx.font = 'bold 20px serif';
+    ctx.fillText("I am a student, leader, and programmer.", canvas.width/2 - 220, canvas.height/2 + 25);
 }
 
 init();
-console.log("ello there?");
 animate()

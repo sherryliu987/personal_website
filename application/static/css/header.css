@@ -4,10 +4,16 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #C6B497;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    z-index: 9999;
 }
 
 li {
-    float: left;
+    float: right;
 }
 
 li a {
