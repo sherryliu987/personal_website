@@ -2,7 +2,7 @@ This is the code for my personal website / place to dump projects. Website at sh
 
 This project uses a flask framework. 
 
-###TASK LIST
+TASK LIST
 - [ ] Make first blog post
 - [ ] Add previous projects
 - [ ] Animated blog logo
@@ -11,6 +11,6 @@ This project uses a flask framework.
 - [ ] Contact at bottom
 - [ ] Color theme
 
-###IDEAS
+IDEAS
 - [ ] Form for project ideas which links to a spreadsheet
 - [ ] What's new pop up
